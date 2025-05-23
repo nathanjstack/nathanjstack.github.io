@@ -1,7 +1,10 @@
+/* Import DM Sans */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 body {
-  font-family: sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
+  font-family: 'DM Sans', sans-serif;
+  background-color: #202020;
+  color: #fbfbfb;
   text-align: center;
   padding: 2rem;
 }
