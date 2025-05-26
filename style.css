@@ -1,5 +1,6 @@
 /* Import DM Sans */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 * {
   margin: 0;
@@ -23,16 +24,31 @@ header {
 }
 
 main {
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .header-content {
   display: flex;
-  align-items: right;
-  gap: 10px; /* spacing between the image and text */
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.logo {
+.logos {
   width: 32px;
   height: 32px;
+}
+
+
+.intro {
+  font-family: 'Roboto Mono', sans-serif;
+  margin-top: 0px;
+  color: #666666;
+  padding: 1.5rem 3rem 3rem 3rem;
+  text-decoration: underline;
+}
+
+.below_header {
+  display: flex;
+  gap: 27rem;
+  padding: 0;
 }
