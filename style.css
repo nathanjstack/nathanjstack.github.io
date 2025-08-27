@@ -44,11 +44,50 @@ main {
   margin-top: 0px;
   color: #666666;
   padding: 1.5rem 3rem 3rem 3rem;
-  text-decoration: underline;
 }
 
 .below_header {
   display: flex;
-  gap: 27rem;
+  gap: 2rem;
   padding: 0;
+  align-items: flex-start;
+}
+
+.below_header p {
+  flex: 1;
+}
+
+.about {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.specialties {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.specialties .info {
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 0.5rem;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  max-width: 400px;
+  line-height: 1.6;
+  list-style: none;
+}
+
+.specialties .info ul {
+  padding-left: 1.5rem;
+}
+
+.about .info {
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 0.5rem;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  max-width: 400px;
+  line-height: 1.6;
 }
