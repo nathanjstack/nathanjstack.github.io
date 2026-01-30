@@ -164,14 +164,19 @@ body {
 }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  cursor: pointer;
-  /* Optional: Makes it feel clickable */
+    display: block;          /* so it behaves like your current container */
+    text-decoration: none;   /* remove underline */
+    color: inherit;          /* keep text color */
+}
+
+.project-card-link {
+    text-decoration: none; /* remove underline */
+    color: inherit;        /* keep text color */
+    display: block;        /* allow block-level styling */
 }
 
 .project-thumbnail {
+  color: inherit; 
   background-color: #d9d9d9;
   /* Light grey background */
   width: 100%;
