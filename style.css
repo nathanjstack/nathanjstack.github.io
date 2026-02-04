@@ -281,3 +281,76 @@ body {
   /* Good spacing for reading paragraphs */
   margin: 0;
 }
+
+/* Add this to the very bottom of style.css */
+
+@media screen and (max-width: 650px) {
+  /* 1. FLIP THE LAYOUT */
+  /* This puts the navbar (which is last in HTML) at the top visually */
+  .site-container {
+    flex-direction: column-reverse; 
+    padding: 0;
+  }
+
+  /* 2. FIX THE NAVBAR */
+  /* Stop floating it over content, let it sit in the flow */
+  .navbar ul {
+    position: relative;
+    padding: 20px 0;
+    justify-content: center; /* Center the links */
+    width: 100%;
+    right: auto;
+    top: auto;
+  }
+  
+  .navbar li {
+    margin: 0 10px;
+  }
+
+  /* 3. FIX SPACING & WIDTHS */
+  /* Remove the narrow width limit on projects */
+  .projects-section {
+    max-width: 100%; /* Allows text to fill the screen */
+  }
+
+  /* Reduce the large 40px margins to save screen space */
+  .profile-card {
+    padding: 20px;
+    text-align: center; /* Optional: Looks nice on mobile */
+  }
+
+  .socials-res {
+    margin-left: 0;
+    justify-content: center; /* Centers icons */
+    margin-bottom: 20px;
+  }
+
+  .skills-section,
+  .projects-section,
+  .experience-section,
+  .education-section {
+    margin-left: 20px;
+    margin-right: 20px; /* Adds breathing room on the right */
+    width: auto; /* Ensures it fits within padding */
+  }
+  
+  /* 4. FIX TIMELINE DATES */
+  /* Allows date to drop below title if screen is too narrow */
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .timeline-date {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+}
+
+.socials-res {
+    margin-left: 0;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+    margin-top: 0px;
+  }
