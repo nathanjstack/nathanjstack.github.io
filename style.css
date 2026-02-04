@@ -281,3 +281,64 @@ body {
   /* Good spacing for reading paragraphs */
   margin: 0;
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .site-container {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .left-content {
+    order: 2; /* Put content below navbar */
+  }
+
+  .navbar {
+    order: 1; /* Navbar at top on mobile */
+    position: static; /* Remove absolute positioning */
+    margin-bottom: 20px;
+  }
+
+  .navbar ul {
+    position: static;
+    top: auto;
+    right: auto;
+    padding: 20px;
+    justify-content: center; /* Center the nav items */
+  }
+
+  .navbar li {
+    margin-left: 15px;
+  }
+
+  .profile-card {
+    padding: 20px; /* Reduce padding on mobile */
+  }
+
+  .socials-res {
+    margin-left: 20px;
+    margin-top: -10px;
+  }
+
+  .skills-section,
+  .projects-section,
+  .experience-section,
+  .education-section {
+    margin-left: 20px; /* Reduce left margin */
+  }
+
+  .projects-section {
+    max-width: 100%; /* Allow full width on mobile */
+  }
+
+  .experience-section,
+  .education-section {
+    max-width: 100%;
+  }
+
+  .skills-list {
+    flex-wrap: wrap; /* Allow skills to wrap */
+    gap: 20px;
+  }
+}
