@@ -290,6 +290,7 @@ body {
   .site-container {
     flex-direction: column-reverse; 
     padding: 0;
+    align-items: left;
   }
 
   /* 2. FIX THE NAVBAR */
@@ -305,6 +306,7 @@ body {
   
   .navbar li {
     margin: 0 10px;
+    margin-left: 20px;
   }
 
   /* 3. FIX SPACING & WIDTHS */
@@ -316,13 +318,14 @@ body {
   /* Reduce the large 40px margins to save screen space */
   .profile-card {
     padding: 20px;
-    text-align: center; /* Optional: Looks nice on mobile */
+    text-align: left; /* Optional: Looks nice on mobile */
   }
 
   .socials-res {
     margin-left: 0;
-    justify-content: center; /* Centers icons */
+    justify-content: left; /* Centers icons */
     margin-bottom: 20px;
+    margin-left: 20px;
   }
 
   .skills-section,
@@ -348,9 +351,9 @@ body {
 
   .socials-res {
     margin-left: 0;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 20px;
-    
+    margin-left: 20px;
     margin-top: 0px;
   }
 
