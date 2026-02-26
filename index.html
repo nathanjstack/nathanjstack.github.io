@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Tag for Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVG2C68CK4"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,7 +18,7 @@
     <meta name="description" content="A site for my portfolio. I am a computer science student who is interested in Backend & Data Engineering and enjoy solving problems and creating unique solutions.">
     <title>Nathan Flack - Portfolio</title>
 
-    <!-- Google Fonts - loaded via link for better GitHub Pages compatibility -->
+    <!-- Preload Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -31,6 +31,7 @@
 <body>
     <div class="site-container">
         <div class="left-content">
+            <!-- Profile Card Section -->
             <div class="profile-card">
                 <p class="name">Nathan Flack</p>
                 <p class="title">Backend & Data Engineer</p>
@@ -53,18 +54,19 @@
                 <p class="section-heading">Skills</p>
 
                 <div class="skills-list">
+                    <!-- Skill Icon 1 (Python) -->
                     <div class="skill-item">
                         <img src="images\python-white.png" alt="Python" class="skill-icon">
                         <p class="skill-name">Python</p>
                         <p class="skill-details">numpy, pandas</p>
                     </div>
-
+                    <!-- Skill Icon 2 (SQL) -->
                     <div class="skill-item">
                         <img src="images\SQL.png" alt="SQL" class="skill-icon">
                         <p class="skill-name">SQL</p>
                         <p class="skill-details">SQLite</p>
                     </div>
-
+                    <!-- Skill Icon 3 (Git) -->
                     <div class="skill-item">
                         <img src="images\git-white.png" alt="Git" class="skill-icon">
                         <p class="skill-name">Git</p>
@@ -72,9 +74,10 @@
                 </div>
             </div>
 
+            <!-- Currently room for ~2 project cards -->
             <div class="projects-section">
                 <p class="section-heading">Recent Projects</p>
-
+                <!-- Project Card 1 -->
                 <a href="https://github.com/nathanjstack/exoplanet_esi" class="project-card-link">
                     <div class="project-card">
                         <div class="project-thumbnail">
@@ -96,7 +99,7 @@
             <div class="experience-section">
                 <p class="section-heading">Experience</p>
 
-                <!-- Job 1 -->
+                <!-- Experience Block 1 -->
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <p class="role-title">E-Learning Developer (Freelance)</p>
@@ -109,7 +112,7 @@
                     </p>
                 </div>
 
-                <!-- Job 2 -->
+                <!-- Experience Blcok 2 -->
                 <div class="timeline-item">
                     <div class="timeline-header">
                         <p class="role-title">Data Engineer (Freelance)</p>
@@ -120,12 +123,11 @@
                         Involved working on the SyntheaMass database (>20 GB of data) containing a set of synthetic
                         patient profiles, using Python and the sqlite3 module to filter for patients with heart disease
                         and exporting relevant profiles to be ingested into Gemini via the genai module in order to
-                        create synthetic patient referral letters.
+                        create synthetic patient referral letters, aiming to save time for health professionals.
                     </p>
                 </div>
             </div>
 
-            <!-- EDUCATION SECTION -->
             <div class="education-section">
                 <p class="section-heading">Education</p>
 
@@ -141,6 +143,7 @@
 
         </div>
 
+        <!-- All links currently leads to placeholder websites -->
         <nav class="navbar">
             <ul>
                 <li><a href="maintenance.html">Home</a></li>
