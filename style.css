@@ -18,7 +18,6 @@ body {
 }
 
 .left-content {
-  /* New style for the wrapper div */
   display: flex;
   flex-direction: column;
 }
