@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solis Health & Wellness</title>
+    <!-- Google Fonts for typography matching -->
+    <style>
+        /* 1. Define the Heading Font (replaces Playfair Display) */
+        @font-face {
+            font-family: 'PPFragment'; 
+            src: url('fonts/PPFragment-SansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 2. Define the Body Font (replaces Lato) */
+        @font-face {
+            font-family: 'TeodorBold'; /* You name this whatever you want */
+            src: url('fonts/Teodor-Bold.ttf') format('truetype'); /* Change filename here */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-green: #476346;
+            --secondary-green: #476346;
+            --bg-cream: #fbf9f4;
+            --accent-gold: #c68e64;
+            --accent-purple: #836EB1;
+            --text-dark: #333;
+            --white: #ffffff;
+            --font-serif: 'TeodorBold', serif;
+            --font-sans: 'PPFragment', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: var(--primary-green);
+            color: var(--white);
+            
+            /* CHANGE 1: Use small padding so items push to the edges */
+            padding: 0 4%; 
+            
+            /* CHANGE 2: This pushes the Nav Links to the far left and Buttons to the far right */
+            justify-content: space-between; 
+            
+            height: 90px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 60px; /* Increased from 20px to 60px for an airy feel */
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .logo {
+            font-family: var(--font-serif); /* Your custom font */
+            font-size: 3.5rem; /* 3. Make this as big as you want! */
+            font-weight: 700;
+            text-transform: uppercase;
+            
+            /* THE MAGIC PART */
+            position: absolute; 
+            left: 50%;
+            top: 50%; /* Push it down slightly to center it visually */
+            transform: translate(-50%, -50%); /* Centers it perfectly */
+            line-height: 1;
+            white-space: nowrap;
+            z-index: 1001;
+            pointer-events: none; /* Optional: lets clicks pass through if it overlaps buttons */
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 25px; /* Increased from 15px to 25px */
+            align-items: center;
+        }
+
+        .btn {
+            /* Spacing inside the button */
+            padding: 12px 28px; 
+            
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            
+            /* CHANGE 2: Rounded Corners */
+            border-radius: 15px; 
+            border: none;
+            
+            transition: all 0.3s ease;
+            font-family: var(--font-sans);
+            letter-spacing: 0.5px; /* Adds a little elegance */
+        }
+
+        .btn-dark {
+            background-color: #222;
+            color: var(--white);
+        }
+
+        .btn-light {
+            background-color: var(--white);
+            color: var(--text-dark);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- WELCOME SECTION --- */
+        .welcome {
+            text-align: center;
+            padding: 4rem 10%;
+        }
+
+        .welcome h1 {
+            font-family: var(--font-serif);
+            color: var(--accent-gold);
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .welcome p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #444;
+        }
+
+        /* --- SERVICES GRID --- */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            
+            padding: 2rem 5% 5rem 5%;
+        }
+
+        .service-card {
+            position: relative;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: var(--white);
+            
+            font-family: var(--font-sans);             
+            font-size: 1.25rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            z-index: 2;
+        }
+        
+        /* darker gradient at bottom of cards so text pops */
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            z-index: 1;
+        }
+
+        /* --- REVIEWS SECTION --- */
+        .reviews-section {
+            background-color: var(--primary-green);
+            padding: 4rem 5%;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .reviews-section h2 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .reviews-sub {
+            font-size: 0.9rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: scale(1.03);
+        }
+
+        .reviewer-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .stars {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* --- LOCATION SECTION --- */
+        .location-section {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .location-section h2 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+
+        .location-image-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .location-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .location-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(230, 226, 215, 0.9);
+            padding: 20px;
+            text-align: left;
+        }
+
+        .location-overlay h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: #000;
+        }
+
+        .location-overlay p {
+            font-size: 1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--accent-purple);
+            color: var(--white);
+            padding: 3rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .footer-left h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .footer-left p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .footer-right {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-right a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .footer-right a:hover {
+            opacity: 0.7;
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                order: 2;
+            }
+            
+            .logo {
+                order: 1;
+            }
+            
+            .header-buttons {
+                order: 3;
+            }
+
+            .welcome h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none; /* Hidden on small screens for simplicity */
+            }
+
+            .welcome {
+                padding: 2rem 5%;
+            }
+
+            .reviews-section h2, .location-section h2 {
+                font-size: 2rem;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2rem;
+            }
+
+            .footer-right {
+                text-align: left;
+            }
+        }
+
+        /* Update this at the bottom of your file */
+        @media (max-width: 1200px) {
+            .nav-links {
+                gap: 30px; /* Shrink gap on laptops so it fits */
+            }
+            
+            header {
+                padding: 0 5%; /* Reduce side padding so content doesn't hit the edges */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-links">
+            <a href="#">About Us</a>
+            <a href="#">Memberships</a>
+            <a href="#">Services</a>
+        </div>
+        <div class="logo">SOLIS</div>
+        <div class="header-buttons">
+            <button class="btn btn-dark">Book Now</button>
+            <button class="btn btn-light">Contact Us</button>
+        </div>
+    </header>
+
+    <!-- Hero Image -->
+    <section class="hero">
+        <img src="Gym+2.jpg" alt="Solis Gym Interior">
+    </section>
+
+    <!-- Introduction -->
+    <section class="welcome">
+        <h1>Welcome to Solis.</h1>
+        <p>We are a boutique health & wellness clinic and studio gym space in the heart of Subiaco. (differentiating statement / information probably would go here)</p>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services">
+        <!-- Card 1 -->
+        <div class="service-card">
+            <img src="Treatment+room+1.jpg" alt="Remedial Massage">
+            <div class="service-label">Remedial Massage</div>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card">
+            <img src="Gym+2.jpg" alt="Strength & Conditioning">
+            <div class="service-label">Strength & Conditioning</div>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card">
+            <img src="Reception+1.jpg" alt="Memberships">
+            <div class="service-label">Memberships</div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <h2>Reviews</h2>
+        <p class="reviews-sub">100% of our 72 total Google Reviews are 5 Star ratings.</p>
+        
+        <div class="reviews-grid">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="reviewer-name">Stella Cheang</div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">I first saw Dom for remedial massage. My body was full of aches & pain on a daily basis. Dom helped to reduce them. Dom is very knowledgeable in what he is doing.</p>
+            </div>
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="reviewer-name">Anna</div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Dom has a holistic approach to therapy. He combines his knowledge of sports science, personal training including strength and conditioning with remedial massage to resolve issues and pain.</p>
+            </div>
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="reviewer-name">Roberta Rosito</div>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Domenico is by far the best professional to support your recovery from pain, injury, or any other thing that is between you and your better, pain free self.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <h2>Location</h2>
+        <div class="location-image-container">
+            <img src="Gym+2.jpg" alt="Subiaco Location">
+            <div class="location-overlay">
+                <h3>Subiaco</h3>
+                <p>9 Axon Street, Subiaco WA 6008</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <h2>Solis Health<br>& Wellness</h2>
+            <p>9 Axon Street, Subiaco 6008</p>
+        </div>
+        <div class="footer-right">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">FAQs</a>
+        </div>
+    </footer>
+
+</body>
+</html>
