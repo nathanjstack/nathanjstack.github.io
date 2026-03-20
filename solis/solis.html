@@ -103,9 +103,11 @@
             height: 90px;
             display: flex;
             align-items: center;
+            position: sticky;
+            top: 0;
             justify-content: space-between;
-            position: relative;
             z-index: 1000;
+            border-bottom: 1px solid #e1ddcf;
         }
 
         .nav-links {
@@ -146,7 +148,6 @@
             display: flex;
             /* Updated to exactly fill the remaining screen height under the 90px header */
             min-height: calc(100vh - 90px); 
-            border-top: 1px solid #e1ddcf;
         }
 
         .hero-content {
@@ -171,7 +172,7 @@
         .hero-content p {
             font-size: 1.2rem;
             color: var(--text-dark);
-            max-width: 450px;
+            max-width: 600px;
             margin-bottom: 2rem;
         }
 
@@ -192,7 +193,7 @@
         /* --- SERVICES SECTION --- */
         .services-section {
             background-color: var(--white); 
-            padding: 5rem 5%;
+            padding: 3rem 5%;
             text-align: center;
         }
 
@@ -469,7 +470,7 @@
         footer {
             background-color: var(--primary-green);
             color: var(--white);
-            padding: 4rem 5%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
@@ -563,7 +564,7 @@
             <a href="#" class="btn btn-dark">Book Now</a>
         </div>
         <div class="hero-image">
-            <img src="Gym+2.jpg" alt="Solis Gym Interior">
+            <img src="images/front_area.jpeg" alt="Solis Gym Interior">
         </div>
     </section>
 
@@ -574,19 +575,19 @@
         
         <div class="services-grid">
             <div class="service-card">
-                <img src="Treatment+room+1.jpg" alt="Remedial Massage">
+                <img src="images/old_Treatment_room_1.jpg" alt="Remedial Massage">
                 <div class="service-label">Remedial Massage</div>
             </div>
             <div class="service-card">
-                <img src="Gym+2.jpg" alt="Personal Training">
+                <img src="images/squat_rack_2.jpeg" alt="Personal Training">
                 <div class="service-label">Personal Training</div>
             </div>
             <div class="service-card">
-                <img src="Reception+1.jpg" alt="Gym Memberships">
+                <img src="images/front_area.jpeg" alt="Gym Memberships">
                 <div class="service-label">Gym Memberships</div>
             </div>
             <div class="service-card">
-                <img src="Treatment+room+1.jpg" alt="Recovery">
+                <img src="images/preacher.jpeg" alt="Recovery">
                 <div class="service-label">Recovery</div>
             </div>
         </div>
@@ -638,11 +639,13 @@
         <div class="explore-carousel-wrapper">
             <button class="carousel-nav-btn prev" onclick="scrollCarousel('exploreCarousel', 'left')">&#10094;</button>
             <div class="explore-carousel" id="exploreCarousel">
-                <div class="explore-item"><img src="Gym+2.jpg" alt="Gym Angle 1"></div>
-                <div class="explore-item"><img src="Reception+1.jpg" alt="Gym Angle 2"></div>
-                <div class="explore-item"><img src="Treatment+room+1.jpg" alt="Gym Angle 3"></div>
-                <div class="explore-item"><img src="https://via.placeholder.com/600x400.png?text=Gym+Angle+4" alt="Gym Angle 4"></div>
-                <div class="explore-item"><img src="https://via.placeholder.com/600x400.png?text=Gym+Angle+5" alt="Gym Angle 5"></div>
+                <div class="explore-item"><img src="images/preacher.jpeg" alt="Gym Angle 1"></div>
+                <div class="explore-item"><img src="images/reception_desk.jpeg" alt="Gym Angle 2"></div>
+                <div class="explore-item"><img src="images/smith_machine.jpeg" alt="Gym Angle 3"></div>
+                <div class="explore-item"><img src="images/squat_rack_1.jpeg" alt="Gym Angle 4"></div>
+                <div class="explore-item"><img src="images/squat_rack_2.jpeg" alt="Gym Angle 5"></div>
+                <div class="explore-item"><img src="images/squat_rack_3.jpeg" alt="Gym Angle 5"></div>
+                <div class="explore-item"><img src="images/squat_rack_4_cropped.jpeg" alt="Gym Angle 5"></div>
             </div>
             <button class="carousel-nav-btn next" onclick="scrollCarousel('exploreCarousel', 'right')">&#10095;</button>
         </div>
@@ -666,7 +669,7 @@
         <div class="memberships-grid">
             <!-- Plan 1 -->
             <div class="membership-card">
-                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop" alt="Plan 1">
+                <img src="images/smith_machine.jpeg" alt="Plan 1">
                 <div class="membership-content">
                     <h3>Plan 1</h3>
                     <p>Description of plan and services offered in this membership plan.</p>
@@ -676,7 +679,7 @@
             </div>
             <!-- Plan 2 -->
             <div class="membership-card">
-                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop" alt="Plan 2">
+                <img src="images/squat_rack_2.jpeg" alt="Plan 2">
                 <div class="membership-content">
                     <h3>Plan 2</h3>
                     <p>Description of plan and services offered in this membership plan.</p>
