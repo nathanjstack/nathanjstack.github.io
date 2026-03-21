@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solis Health & Wellness</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Memberships</a>
+            <a href="services.html">Services</a>
+        </div>
+        <a href="/" class="logo">SOLIS</a>
+        <div class="header-buttons">
+            <a href="booking.html" class="btn btn-dark">Book Now</a>
+            <a href="#" class="btn btn-outline">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Solis.</h1>
+            <p>We are a boutique health & wellness clinic and studio gym space in the heart of Subiaco.</p>
+            <a href="#" class="btn btn-dark">Book Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/front_area.jpeg" alt="Solis Gym Interior">
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="services-section">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">At Solis we offer a variety of unique services specifically tailored to your needs.</p>
+        
+        <div class="services-grid">
+            <!-- Link to services.html with hash #massage -->
+            <a href="services.html#massage" class="service-card">
+                <img src="images/old_Treatment_room_1.jpg" alt="Remedial Massage">
+                <div class="service-label">Remedial Massage</div>
+            </a>
+            <!-- Link to services.html with hash #pt -->
+            <a href="services.html#pt" class="service-card">
+                <img src="images/squat_rack_2.jpeg" alt="Personal Training">
+                <div class="service-label">Personal Training</div>
+            </a>
+            <!-- Link to services.html with hash #membership -->
+            <a href="services.html#membership" class="service-card">
+                <img src="images/front_area.jpeg" alt="Gym Memberships">
+                <div class="service-label">Gym Memberships</div>
+            </a>
+            <!-- Link to services.html with hash #recovery -->
+            <a href="services.html#recovery" class="service-card">
+                <img src="images/preacher.jpeg" alt="Recovery">
+                <div class="service-label">Recovery</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Reviews Carousel Section -->
+    <section class="reviews-section">
+        <h2 class="section-title">Reviews</h2>
+        <p class="section-subtitle">100% of our 73 total Google Reviews are 5 Star ratings.</p>
+        
+        <div class="carousel-container">
+            <button class="carousel-nav-btn prev" onclick="scrollCarousel('reviewsCarousel', 'left')">&#10094;</button>
+            <div class="reviews-wrapper" id="reviewsCarousel">
+                <div class="review-card">
+                    <div class="reviewer-name">Stella Cheang</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">I first saw Dom for remedial massage. My body was full of aches & pain on a daily basis & Dom helped to reduce them. Dom is very knowledgeable in what he is doing.</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer-name">Anna</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">Dom has a holistic approach to therapy. He combines his knowledge of sports science, personal training including strength and conditioning with remedial massage to resolve any issues and pain.</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer-name">Roberta Rosito</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">Domenico is by far the best professional to support your recovery from pain, injury, or any other thing that is between you and your better, pain free self.</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer-name">Michael T.</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">Incredible facility and highly skilled trainers. The recovery sessions are a game-changer for my athletic performance. Highly recommended to anyone in Subiaco.</p>
+                </div>
+                <div class="review-card">
+                    <div class="reviewer-name">Sarah J.</div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">Absolutely love the atmosphere here. The equipment is top tier, and the staff is incredibly welcoming and knowledgeable. It really sets the standard for boutique gyms.</p>
+                </div>
+            </div>
+            <button class="carousel-nav-btn next" onclick="scrollCarousel('reviewsCarousel', 'right')">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Explore Solis Carousel Section -->
+    <section class="explore-section">
+        <h2 class="section-title">Explore Solis</h2>
+        <p class="section-subtitle">Take a look at our space at 9 Axon Street, Subiaco.</p>
+
+        <div class="explore-carousel-wrapper">
+            <button class="carousel-nav-btn prev" onclick="scrollCarousel('exploreCarousel', 'left')">&#10094;</button>
+            <div class="explore-carousel" id="exploreCarousel">
+                <div class="explore-item"><img src="images/preacher.jpeg" alt="Gym Angle 1"></div>
+                <div class="explore-item"><img src="images/reception_desk.jpeg" alt="Gym Angle 2"></div>
+                <div class="explore-item"><img src="images/smith_machine.jpeg" alt="Gym Angle 3"></div>
+                <div class="explore-item"><img src="images/squat_rack_1.jpeg" alt="Gym Angle 4"></div>
+                <div class="explore-item"><img src="images/squat_rack_2.jpeg" alt="Gym Angle 5"></div>
+                <div class="explore-item"><img src="images/squat_rack_3.jpeg" alt="Gym Angle 5"></div>
+                <div class="explore-item"><img src="images/squat_rack_4_cropped.jpeg" alt="Gym Angle 5"></div>
+            </div>
+            <button class="carousel-nav-btn next" onclick="scrollCarousel('exploreCarousel', 'right')">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Floor Plan Text Section -->
+    <section class="floorplan-section">
+        <div class="floorplan-img">
+            <img src="Untitled.png" alt="Floor Plan">
+        </div>
+        <div class="floorplan-text">
+            Text describing the space. There are dumbbells and machines and etc etc this is currently just filler placeholder text to take up room so this area does not look blank, but id put a description of the space and what makes it special here probably. Alternatively, you could remove this section but im not sure where else youd put a floor plan.
+        </div>
+    </section>
+
+    <!-- Memberships Section -->
+    <section class="memberships-section">
+        <h2 class="section-title">Memberships</h2>
+        <p class="section-subtitle">Explore our membership options.</p>
+
+        <div class="memberships-grid">
+            <div class="membership-card">
+                <img src="images/smith_machine.jpeg" alt="Plan 1">
+                <div class="membership-content">
+                    <h3>Plan 1</h3>
+                    <p>Description of plan and services offered in this membership plan.</p>
+                    <div class="membership-price">$00 per week / month.</div>
+                    <a href="#" class="btn btn-dark" style="width: 100%;">Join Now</a>
+                </div>
+            </div>
+            <div class="membership-card">
+                <img src="images/squat_rack_2.jpeg" alt="Plan 2">
+                <div class="membership-content">
+                    <h3>Plan 2</h3>
+                    <p>Description of plan and services offered in this membership plan.</p>
+                    <div class="membership-price">$00 per week / month.</div>
+                    <a href="#" class="btn btn-dark" style="width: 100%;">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <h2>Solis Health<br>& Wellness</h2>
+            <p>9 Axon Street, Subiaco 6008</p>
+        </div>
+        <div class="footer-right">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">FAQs</a>
+        </div>
+    </footer>
+
+    <!-- Link to external JS -->
+    <script src="script.js"></script>
+</body>
+</html>
