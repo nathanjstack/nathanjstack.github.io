@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 targetElement.classList.add('active');
                 targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 500);
+            }, 150);
         }
     }
 });
