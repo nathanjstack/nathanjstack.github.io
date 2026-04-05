@@ -358,3 +358,9 @@ body {
 
 }
 
+.exoplanet-item {
+  color: #ffffff;
+  font-size: 1em;
+  margin: 8px 0;
+  line-height: 2.5em;
+}
