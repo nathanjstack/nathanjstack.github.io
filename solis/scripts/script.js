@@ -32,29 +32,36 @@ function scrollCarousel(carouselId, direction) {
     }
 }
 
-// Existing Carousel Code ...
-function scrollCarousel(carouselId, direction) {
-    const carousel = document.getElementById(carouselId);
-    if (!carousel) return;
-    const itemWidth = carousel.firstElementChild.offsetWidth + 20; 
-    const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
-    if (direction === 'left') {
-        if (carousel.scrollLeft <= 0) {
-            carousel.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
-        } else {
-            carousel.scrollBy({ left: -itemWidth, behavior: 'smooth' });
-        }
-    } else {
-        if (carousel.scrollLeft >= maxScrollLeft - 5) {
-            carousel.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            carousel.scrollBy({ left: itemWidth, behavior: 'smooth' });
-        }
-    }
+// Mobile hamburger menu toggle
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger menu toggle
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburgerBtn.classList.toggle('active');
+        });
+    }
+
+    // Close menu when a nav link is clicked
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            if (hamburgerBtn) {
+                hamburgerBtn.classList.remove('active');
+            }
+        });
+    });
+
     const accordionHeaders = document.querySelectorAll('.accordion-header');
 
     accordionHeaders.forEach(header => {
