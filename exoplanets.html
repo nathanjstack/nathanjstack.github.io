@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Top 10 Exoplanets</title>
 
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Your main CSS -->
   <link rel="stylesheet" href="style.css">
+  <script src="update_exoplanets.js"></script>
+
 </head>
 <body>
   <div class="site-container">
@@ -31,20 +33,8 @@
     </nav>
   </div>
 
-  <script>
-    fetch('data/top10_esi.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.querySelector('.top10-list');
-
-        data.forEach((planet, index) => {
-          const item = document.createElement('p');
-          item.className = 'exoplanet-item';
-          item.textContent = `${index + 1}. ${planet.pl_name} ${planet.esi.toFixed(3)}`;
-          container.appendChild(item);
-        });
-      })
-      .catch(err => console.error('Error loading top10 JSON:', err));
-  </script>
+  <div style="text-align: center; margin-top: 1rem;">
+    <span id="last-updated"></span>
+  </div>
 </body>
 </html>

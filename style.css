@@ -364,3 +364,15 @@ body {
   margin: 8px 0;
   line-height: 2.5em;
 }
+
+#last-updated {
+  display: inline-block;
+  background-color: #1a1a2e;
+  color: #a0a0c0;
+  font-size: 0.75rem;
+  font-family: 'DM Sans';
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #2e2e4e;
+  margin-top: 0.75rem;
+}
