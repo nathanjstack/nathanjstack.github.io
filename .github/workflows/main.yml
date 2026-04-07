@@ -25,7 +25,7 @@ jobs:
         run: pip install -r scripts/requirements.txt
 
       - name: Run exoplanet script
-        run: python scripts/retrieve_catalogue.py -d data/exoplanet_catalogue.db -r -e --top10 --output data/top10_esi.json
+        run: python scripts/retrieve_catalogue.py -d /tmp/exoplanet_catalogue.db -r -e --top10 --output data/top10_esi.json
 
       - name: Commit and push updated JSON
         run: |
