@@ -3,7 +3,7 @@ fetch('../data/top10_esi.json')
   .then(data => {
     // Display calculated_at date
     if (data.calculated_at) {
-      document.getElementById('last-updated').textContent = `Rankings last calculated: ${data.calculated_at}`;
+      document.getElementById('last-updated').textContent = `Rankings last calculated: ${data.calculated_at} UTC`;
     }
 
     // Render planets from results array
