@@ -1,4 +1,4 @@
-fetch('data/top10_esi.json')
+fetch('../data/top10_esi.json')
   .then(response => response.json())
   .then(data => {
     // Display calculated_at date
