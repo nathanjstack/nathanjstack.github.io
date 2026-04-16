@@ -744,7 +744,7 @@ footer {
 .contact-header {
     padding: 5rem 5% 2rem 5%;
     text-align: center;
-    background-color: var(--bg-cream);
+    background-color: var(--accent-orange);
 }
 
 .contact-section {
