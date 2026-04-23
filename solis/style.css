@@ -430,95 +430,6 @@ header {
     object-fit: cover;
 }
 
-/* --- FLOOR PLAN SECTION --- */
-.floorplan-section {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 0 10% 5rem 10%;
-}
-
-.floorplan-img {
-    flex: 1;
-}
-
-.floorplan-img img {
-    width: 100%;
-    max-width: 400px;
-    display: block;
-    margin: 0 auto;
-}
-
-.floorplan-text {
-    flex: 1;
-    font-size: 1.1rem;
-    color: var(--text-dark);
-}
-
-/* --- MEMBERSHIPS SECTION --- */
-.memberships-section {
-    background-color: var(--white);
-    padding: 5rem 5%;
-    text-align: center;
-}
-
-.memberships-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.membership-card {
-    background: var(--bg-cream);
-    border-radius: 20px;
-    overflow: hidden;
-    text-align: left;
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.membership-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.membership-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.membership-card:hover img {
-    transform: scale(1.05);
-}
-
-.membership-content {
-    padding: 2.5rem;
-    position: relative; 
-    background: var(--bg-cream);
-}
-
-.membership-content h3 {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.membership-content p {
-    color: var(--text-light);
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
-}
-
-.membership-price {
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-}
-
 /* --- FOOTER --- */
 footer {
     background-color: var(--primary-green);
@@ -598,12 +509,9 @@ footer {
     .hero-image { height: 400px; }
     
     .services-grid { grid-template-columns: 1fr; }
-    .memberships-grid { grid-template-columns: 1fr; }
     .explore-item { flex: 0 0 100%; }
     .review-card { flex: 0 0 100%; }
-    
-    .floorplan-section { flex-direction: column; padding: 0 5% 4rem 5%; text-align: center; }
-    
+        
     footer { flex-direction: column; align-items: flex-start; gap: 2rem; }
     .footer-right { text-align: left; }
 }
