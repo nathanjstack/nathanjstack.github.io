@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Solis Health & Wellness - Our philosophy, our space, and the person behind it all.">
+    <meta name="theme-color" content="#476346">
+    <title>SOLIS • About</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/LOGO_SYMBOL.png" type="image/png">
+    <style>
+        /* ── ABOUT PAGE SPECIFIC ── */
+
+        /* Hero */
+        .about-hero {
+            min-height: 85vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+
+        .about-hero-left {
+            background-color: var(--primary-green);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6rem 6rem 5rem 6rem;
+            position: relative;
+        }
+
+        .about-hero-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2rem;
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards 0.1s;
+        }
+
+        .about-hero-left h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3.5rem, 6vw, 6rem);
+            line-height: 1.0;
+            letter-spacing: -0.03em;
+            color: var(--white);
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.9s ease forwards 0.2s;
+        }
+
+        .about-hero-left h1 em {
+            font-style: italic;
+            color: var(--accent-orange);
+        }
+
+        .about-hero-tagline {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.65);
+            max-width: 380px;
+            line-height: 1.7;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.9s ease forwards 0.35s;
+        }
+
+        .about-hero-right {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1.04);
+            animation: scaleIn 1.4s ease forwards 0s;
+        }
+
+        .about-hero-right::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, var(--primary-green) 0%, transparent 30%);
+            z-index: 1;
+        }
+
+        /* Philosophy section */
+        .about-philosophy {
+            background-color: var(--bg-cream);
+            padding: 8rem 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .philosophy-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-orange);
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy-quote {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.25;
+            letter-spacing: -0.02em;
+            color: var(--text-dark);
+            margin-bottom: 2.5rem;
+        }
+
+        .philosophy-quote em {
+            font-style: italic;
+            color: var(--primary-green);
+        }
+
+        .philosophy-body {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            max-width: 480px;
+        }
+
+        .philosophy-image-stack {
+            position: relative;
+            height: 560px;
+        }
+
+        .philosophy-img-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75%;
+            height: 85%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .philosophy-img-accent {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 55%;
+            height: 55%;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 6px solid var(--bg-cream);
+        }
+
+        /* Values strip */
+        .about-values {
+            background-color: var(--text-dark);
+            padding: 5rem 5%;
+            overflow: hidden;
+        }
+
+        .values-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .values-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            display: block;
+            margin-bottom: 4rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .value-item {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 2rem;
+        }
+
+        .value-number {
+            font-family: var(--font-serif);
+            font-size: 0.85rem;
+            color: var(--accent-orange);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .value-title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .value-body {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.75;
+        }
+
+        /* Meet Dom section */
+        .about-meet {
+            padding: 8rem 5%;
+            background-color: var(--bg-cream);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .meet-inner {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        .meet-image-wrapper {
+            position: relative;
+            width: 420px;
+            flex-shrink: 0;
+        }
+
+        .meet-image-wrapper img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .meet-image-badge {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            padding: 1.25rem 1.5rem;
+            border-radius: 15px;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .meet-image-badge strong {
+            display: block;
+            font-size: 2rem;
+            letter-spacing: -0.03em;
+        }
+
+        .meet-content {
+            padding-top: 1rem;
+        }
+
+        .meet-content .philosophy-label {
+            margin-bottom: 1.25rem;
+        }
+
+        .meet-content h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .meet-content h2 em {
+            font-style: italic;
+            color: var(--primary-green);
+        }
+
+        .meet-body {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            max-width: 560px;
+            margin-bottom: 3rem;
+        }
+
+        .meet-credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .credential-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--accent-orange);
+            flex-shrink: 0;
+        }
+
+        /* Space section */
+        .about-space {
+            background-color: var(--white);
+            padding: 8rem 5%;
+        }
+
+        .space-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .space-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+        }
+
+        .space-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            color: var(--text-dark);
+        }
+
+        .space-header p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            max-width: 320px;
+            line-height: 1.7;
+            text-align: right;
+        }
+
+        .space-mosaic {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 320px 320px;
+            gap: 16px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .space-mosaic-item {
+            overflow: hidden;
+        }
+
+        .space-mosaic-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            display: block;
+        }
+
+        .space-mosaic-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .space-mosaic-item.tall {
+            grid-row: 1 / 3;
+        }
+
+        /* CTA section */
+        .about-cta {
+            background-color: var(--accent-orange);
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .about-cta h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            color: var(--white);
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-cta p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 3rem;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .btn-white {
+            background-color: var(--white);
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .btn-white:hover {
+            background-color: var(--text-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+            to { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-hero { grid-template-columns: 1fr; min-height: auto; }
+            .about-hero-left { padding: 5rem 5% 4rem 5%; min-height: 70vh; }
+            .about-hero-right { height: 50vh; }
+            .about-hero-right::after { background: linear-gradient(to bottom, var(--primary-green) 0%, transparent 40%); }
+
+            .about-philosophy { grid-template-columns: 1fr; gap: 4rem; padding: 5rem 5%; }
+            .philosophy-image-stack { height: 420px; order: -1; }
+
+            .values-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+            .meet-inner { grid-template-columns: 1fr; gap: 3rem; }
+            .meet-image-wrapper { width: 100%; }
+            .meet-image-wrapper img { aspect-ratio: 4/3; }
+
+            .space-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .space-header p { text-align: left; }
+            .space-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px 220px; }
+            .space-mosaic-item.tall { grid-row: auto; }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero-left { padding: 4rem 5% 3rem 5%; }
+            .about-philosophy { padding: 4rem 5%; }
+            .about-meet { padding: 4rem 5%; }
+            .about-space { padding: 4rem 5%; }
+            .space-mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">SOLIS</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+        </div>
+        <button class="hamburger-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="header-buttons">
+            <a href="booking.html" class="btn btn-dark">Book Now</a>
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <div class="about-hero-left">
+            <span class="about-hero-eyebrow">Subiaco, Western Australia</span>
+            <h1>A different<br>kind of <em>care.</em></h1>
+            <p class="about-hero-tagline">We believe health isn't something that happens to you in a clinic. It's something you build — with the right environment, the right guidance, and someone in your corner.</p>
+        </div>
+        <div class="about-hero-right">
+            <!-- Replace with actual image -->
+            <img src="https://placehold.co/900x1000/2a3d29/F8F3EC?text=." alt="Solis studio space">
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section style="background-color: var(--bg-cream); padding: 0 5%;">
+        <div class="about-philosophy">
+            <div class="philosophy-text">
+                <span class="philosophy-label">Our Philosophy</span>
+                <p class="philosophy-quote">Moving away from treating <em>conditions</em>, towards treating <em>people.</em></p>
+                <p class="philosophy-body">Chronic and persistent pain is one of the most underestimated challenges of modern life. At Solis, we believe the traditional clinical model — cold, transactional, condition-focused — fails people at the most fundamental level. We built something different: a calm, boutique space where you are seen as a whole person, not a set of symptoms to be managed.</p>
+            </div>
+            <div class="philosophy-image-stack">
+                <img class="philosophy-img-main" src="https://placehold.co/520x480/d4c8b8/555555?text=." alt="Treatment room at Solis">
+                <img class="philosophy-img-accent" src="https://placehold.co/360x320/476346/F8F3EC?text=." alt="Solis gym space">
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="about-values">
+        <div class="values-inner">
+            <span class="values-label">What we stand for</span>
+            <div class="values-grid">
+                <div class="value-item">
+                    <span class="value-number">01</span>
+                    <h3 class="value-title">Education over dependency</h3>
+                    <p class="value-body">We empower clients with an understanding of their own body — so they leave more capable, not more reliant. Knowledge is part of the treatment.</p>
+                </div>
+                <div class="value-item">
+                    <span class="value-number">02</span>
+                    <h3 class="value-title">Calm, intentional space</h3>
+                    <p class="value-body">Our environment is deliberately unhurried. No crowds, no noise, no performance. Just focused, present attention — to the session and to you.</p>
+                </div>
+                <div class="value-item">
+                    <span class="value-number">03</span>
+                    <h3 class="value-title">Strength as medicine</h3>
+                    <p class="value-body">We view movement and strength as fundamental to long-term health — physical and mental. Building resilience isn't separate from recovery. It is recovery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Dom -->
+    <section style="background-color: var(--bg-cream); padding: 8rem 5%;">
+        <div class="about-meet" style="padding: 0; max-width: 1400px; margin: 0 auto;">
+            <div class="meet-inner">
+                <div class="meet-image-wrapper">
+                    <!-- Replace with actual portrait -->
+                    <img src="images/jpg/dom.jpg" alt="Dom, founder of Solis">
+                    <div class="meet-image-badge">
+                        <strong>Dom</strong>
+                        Founder
+                    </div>
+                </div>
+                <div class="meet-content">
+                    <span class="philosophy-label">The person behind Solis</span>
+                    <h2>Built from<br>a <em>conviction.</em></h2>
+                    <p class="meet-body">Solis was founded on a simple but deeply held belief: that the health system too often treats the condition and overlooks the person. Dom set out to create something that didn't exist in Perth — a private, boutique studio where clinical rigour and genuine human care exist in the same space.</p>
+                    <p class="meet-body" style="margin-top: -1.5rem;">Every session at Solis reflects that conviction. No templates, no shortcuts, no rushing through. Just focused, evidence-informed practice in an environment designed to make you feel at ease from the moment you walk in.</p>
+                    <div class="meet-credentials">
+                        <div class="credential-item"><span class="credential-dot"></span>Remedial Massage Therapist</div>
+                        <div class="credential-item"><span class="credential-dot"></span>Accredited Personal Trainer</div>
+                        <div class="credential-item"><span class="credential-dot"></span>Dry Needling Practitioner</div>
+                        <div class="credential-item"><span class="credential-dot"></span>Based in Subiaco, Perth WA</div>
+                    </div>
+                    <a href="booking.html" class="btn btn-dark">Book a Session</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Space -->
+    <section class="about-space">
+        <div class="space-inner">
+            <div class="space-header">
+                <h2>The<br>Space.</h2>
+                <p>9 Axon Street, Subiaco. A private boutique studio designed for focus, calm, and genuine progress.</p>
+            </div>
+            <div class="space-mosaic">
+                <!-- Replace placeholders with actual images -->
+                <div class="space-mosaic-item tall">
+                    <img src="https://placehold.co/700x660/c8bfb0/555555?text=." alt="Solis main gym floor">
+                </div>
+                <div class="space-mosaic-item">
+                    <img src="https://placehold.co/400x320/476346/F8F3EC?text=." alt="Squat rack">
+                </div>
+                <div class="space-mosaic-item">
+                    <img src="https://placehold.co/400x320/d4c8b8/555555?text=." alt="Treatment room">
+                </div>
+                <div class="space-mosaic-item">
+                    <img src="https://placehold.co/400x320/D67C49/F8F3EC?text=." alt="Recovery sauna">
+                </div>
+                <div class="space-mosaic-item">
+                    <img src="https://placehold.co/400x320/2a3d29/F8F3EC?text=." alt="Reception area">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+        <h2>Ready to begin?</h2>
+        <p>Whether you're managing pain, building strength, or simply looking for a space that takes you seriously — we'd love to meet you.</p>
+        <a href="booking.html" class="btn btn-white">Book Your First Session</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <h2>Solis Health<br>& Wellness</h2>
+            <p>9 Axon Street, Subiaco 6008</p>
+        </div>
+        <div class="footer-right">
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="https://www.instagram.com/solis_subiaco/">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
