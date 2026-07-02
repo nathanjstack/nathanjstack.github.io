@@ -13,7 +13,7 @@
 
         /* Hero */
         .about-hero {
-            min-height: 85vh;
+            min-height: 20vh;
             display: grid;
             grid-template-columns: 1fr 1fr;
             overflow: hidden;
@@ -192,6 +192,19 @@
             padding-top: 2rem;
         }
 
+        .value-accordion {
+            display: block;
+        }
+
+        .value-accordion summary {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .value-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
         .value-number {
             font-family: var(--font-serif);
             font-size: 0.85rem;
@@ -209,10 +222,28 @@
             line-height: 1.2;
         }
 
+        .value-preview {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.72);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .value-full {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255,255,255,0.12);
+        }
+
         .value-body {
             font-size: 0.9rem;
             color: rgba(255,255,255,0.5);
             line-height: 1.75;
+            margin: 0;
+        }
+
+        .value-accordion[open] .value-preview {
+            display: none;
         }
 
         /* Meet Dom section */
@@ -331,8 +362,10 @@
         .space-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 4rem;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0;
         }
 
         .space-header h2 {
@@ -341,14 +374,16 @@
             letter-spacing: -0.03em;
             line-height: 1.05;
             color: var(--text-dark);
+            margin-bottom: 0;
         }
 
         .space-header p {
             font-size: 0.95rem;
             color: var(--text-light);
-            max-width: 320px;
-            line-height: 1.7;
-            text-align: right;
+            max-width: 560px;
+            line-height: 1.8;
+            text-align: left;
+            margin: 0;
         }
 
         .space-mosaic {
@@ -483,39 +518,39 @@
     <section class="about-hero">
         <div class="about-hero-left">
             <span class="about-hero-eyebrow">Subiaco, Western Australia</span>
-            <h1>A different<br>kind of <em>care.</em></h1>
-            <p class="about-hero-tagline">We believe health isn't something that happens to you in a clinic. It's something you build — with the right environment, the right guidance, and someone in your corner.</p>
+            <h1>Movement<br>is <em>medicine.</em></h1>
+            <p class="about-hero-tagline">Nothing produces better outcomes for pain, mental health and overall quality of life than purposeful, progressive movement, and that belief sits at the centre of everything we do at SOLIS.</p>
         </div>
         <div class="about-hero-right">
             <!-- Replace with actual image -->
-            <img src="https://placehold.co/900x1000/2a3d29/F8F3EC?text=." alt="Solis studio space">
+            <img src="images/jpg/squat_rack_1.jpg" alt="Solis studio space">
         </div>
     </section>
 
     <!-- The Space -->
     <section class="about-space">
         <div class="space-inner">
-            <div class="space-header">
-                <h2>The<br>Space.</h2>
-                <p>9 Axon Street, Subiaco. A private boutique studio designed for focus, calm, and genuine progress.</p>
-            </div>
             <div class="space-mosaic">
                 <!-- Replace placeholders with actual images -->
                 <div class="space-mosaic-item tall">
-                    <img src="https://placehold.co/700x660/c8bfb0/555555?text=." alt="Solis main gym floor">
+                    <img src="images/jpg/machines+car.jpeg" alt="Main area">
                 </div>
                 <div class="space-mosaic-item">
-                    <img src="https://placehold.co/400x320/476346/F8F3EC?text=." alt="Squat rack">
+                    <img src="images/jpg/hack+barbell.jpeg" alt="Hack squat and barbells">
                 </div>
                 <div class="space-mosaic-item">
-                    <img src="https://placehold.co/400x320/d4c8b8/555555?text=." alt="Treatment room">
+                    <img src="images/jpg/treatment_2.jpeg" alt="Treatment room">
                 </div>
                 <div class="space-mosaic-item">
-                    <img src="https://placehold.co/400x320/D67C49/F8F3EC?text=." alt="Recovery sauna">
+                    <img src="images/jpg/sauna.jpeg" alt="Recovery sauna">
                 </div>
                 <div class="space-mosaic-item">
-                    <img src="https://placehold.co/400x320/2a3d29/F8F3EC?text=." alt="Reception area">
+                    <img src="images/jpg/dumbbell+rack.jpeg" alt="Dumbbell rack">
                 </div>
+            </div>
+            <div class="space-header">
+                <h2>The<br>Space.</h2>
+                <p>SOLIS is not a commercial gym - and it was never meant to be. Housed in a warehouse in the heart of Subiaco, the studio has been purposefully designed from the ground up to feel unlike anything else in Perth. Hand-picked high-end equipment chosen for quality over quantity, plants throughout, and a calm industrial aesthetic that is as intentional as the work that happens inside it.</p>
             </div>
         </div>
     </section>
@@ -525,12 +560,11 @@
         <div class="about-philosophy">
             <div class="philosophy-text">
                 <span class="philosophy-label">Our Philosophy</span>
-                <p class="philosophy-quote">Moving away from treating <em>conditions</em>, towards treating <em>people.</em></p>
-                <p class="philosophy-body">Chronic and persistent pain is one of the most underestimated challenges of modern life. At Solis, we believe the traditional clinical model — cold, transactional, condition-focused — fails people at the most fundamental level. We built something different: a calm, boutique space where you are seen as a whole person, not a set of symptoms to be managed.</p>
+                <p class="philosophy-body">We've built an environment where pain and mental health are addressed together, free from the clinical language, fear and limitation that conventional healthcare too often creates. Remedial massage and structured training work together here to remove the physical and mental barriers that keep people stuck - replacing confusion and apprehension with structure, strength and clarity. We don't focus on what's wrong or what you can't do. We find what you can recover from, build a baseline, and grow from there - in a calm, intentional environment where you feel empowered, supported and genuinely taken care of.</p>
             </div>
             <div class="philosophy-image-stack">
-                <img class="philosophy-img-main" src="https://placehold.co/520x480/d4c8b8/555555?text=." alt="Treatment room at Solis">
-                <img class="philosophy-img-accent" src="https://placehold.co/360x320/476346/F8F3EC?text=." alt="Solis gym space">
+                <img class="philosophy-img-main" src="images/jpg/door.jpeg" alt="Treatment room at Solis">
+                <img class="philosophy-img-accent" src="images/jpg/preacher.jpg" alt="Solis gym space">
             </div>
         </div>
     </section>
@@ -541,19 +575,40 @@
             <span class="values-label">What we stand for</span>
             <div class="values-grid">
                 <div class="value-item">
-                    <span class="value-number">01</span>
-                    <h3 class="value-title">Education over dependency</h3>
-                    <p class="value-body">We empower clients with an understanding of their own body — so they leave more capable, not more reliant. Knowledge is part of the treatment.</p>
+                    <details class="value-accordion">
+                        <summary>
+                            <span class="value-number">01</span>
+                            <h3 class="value-title">Resilience.</h3>
+                            <p class="value-preview">Whatever you're dealing with - pain, injury, stress, fatigue - the answer is almost always to build more resilience, not do less.</p>
+                        </summary>
+                        <div class="value-full">
+                            <p class="value-body">Whatever you're dealing with - pain, injury, stress, fatigue - the answer is almost always to build more resilience, not do less. The body and mind become more resilient through the same process: controlled exposure, progressive challenge, and recovery. Progressive training develops tolerance at a neurological level, the goal is not to avoid discomfort but to expand what you can tolerate, until what once felt overwhelming becomes manageable. This increased resilience, built in the gym, transcends into all aspects of life, leaving clients empowered and more equipped for whatever the day brings.</p>
+                        </div>
+                    </details>
                 </div>
                 <div class="value-item">
-                    <span class="value-number">02</span>
-                    <h3 class="value-title">Calm, intentional space</h3>
-                    <p class="value-body">Our environment is deliberately unhurried. No crowds, no noise, no performance. Just focused, present attention — to the session and to you.</p>
+                    <details class="value-accordion">
+                        <summary>
+                            <span class="value-number">02</span>
+                            <h3 class="value-title">Intention.</h3>
+                            <p class="value-preview">In a world that rewards speed and productivity, there is something quietly powerful about slowing down and doing one thing well.</p>
+                        </summary>
+                        <div class="value-full">
+                            <p class="value-body">In a world that rewards speed and productivity, there is something quietly powerful about slowing down and doing one thing well. At SOLIS, every session is built around intentional movement and that intention is where physical and mental progress meet. Training with presence, fully focused on the task in front of you, is mindfulness in practice. It is also where the best results come from - because when the mind and body are working together toward the same goal, progress accelerates. Acting with intention and clarity is woven into everything we do here at SOLIS.</p>
+                        </div>
+                    </details>
                 </div>
                 <div class="value-item">
-                    <span class="value-number">03</span>
-                    <h3 class="value-title">Strength as medicine</h3>
-                    <p class="value-body">We view movement and strength as fundamental to long-term health — physical and mental. Building resilience isn't separate from recovery. It is recovery.</p>
+                    <details class="value-accordion">
+                        <summary>
+                            <span class="value-number">03</span>
+                            <h3 class="value-title">Movement is medicine.</h3>
+                            <p class="value-preview">Movement is the most powerful intervention available to the human body and mind and the evidence is clear.</p>
+                        </summary>
+                        <div class="value-full">
+                            <p class="value-body">Movement is the most powerful intervention available to the human body and mind and the evidence is clear. Nothing produces better outcomes for chronic pain, mental health and long term quality of life than purposeful, progressive movement applied consistently over time. Not medication, not passive treatment, not rest. Movement. At SOLIS, movement isn’t something you earn once you’re feeling better. It’s the reason you feel better. Every session is designed to meet you where you are, removing the barriers that have been keeping you stuck and building from there with structure, intention and care. Through this method, things that seemed out of reach - strength, a physique you’re proud of, freedom of movement, a quieter mind - begin to feel not only achievable but inevitable.</p>
+                        </div>
+                    </details>
                 </div>
             </div>
         </div>
