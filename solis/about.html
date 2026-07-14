@@ -200,6 +200,7 @@
         .value-accordion summary {
             list-style: none;
             cursor: pointer;
+            outline: none;
         }
 
         .value-accordion summary::-webkit-details-marker {
@@ -221,6 +222,40 @@
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
             line-height: 1.2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s ease, color 0.3s ease;
+            transform-origin: left center;
+        }
+
+        /* NEW: The Dropdown Arrow */
+        .value-title::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid rgba(255,255,255,0.5);
+            border-bottom: 2px solid rgba(255,255,255,0.5);
+            transform: rotate(45deg);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            margin-left: 1rem;
+            flex-shrink: 0;
+        }
+
+         
+        .value-accordion summary:hover .value-title {
+            transform: scale(1.04);
+            color: var(--accent-orange);
+        }
+
+        .value-accordion summary:hover .value-title::after {
+            border-color: var(--accent-orange);
+        }
+
+        .value-accordion[open] .value-title::after {
+            transform: rotate(225deg) translate(-2px, -2px);
+            border-color: var(--accent-orange);
         }
 
         .value-preview {
@@ -365,8 +400,8 @@
             justify-content: space-between;
             align-items: flex-start;
             gap: 2rem;
-            margin-top: 2.5rem;
-            margin-bottom: 0;
+            margin-top: 0;           
+            margin-bottom: 3.5rem;  
         }
 
         .space-header h2 {
@@ -533,8 +568,15 @@
     <!-- The Space -->
     <section class="about-space">
         <div class="space-inner">
+            
+            <!-- HEADER IS NOW MOVED UP -->
+            <div class="space-header">
+                <h2>The Space.</h2> <!-- Removed the <br> so it flows better on top -->
+                <p>SOLIS is not a commercial gym - and it was never meant to be. Housed in a warehouse in the heart of Subiaco, the studio has been purposefully designed from the ground up to feel unlike anything else in Perth. Hand-picked high-end equipment chosen for quality over quantity, plants throughout, and a calm industrial aesthetic that is as intentional as the work that happens inside it.</p>
+            </div>
+
+            <!-- MOSAIC IMAGES ARE NOW BELOW -->
             <div class="space-mosaic">
-                <!-- Replace placeholders with actual images -->
                 <div class="space-mosaic-item tall">
                     <img src="images/jpg/machines+car.jpeg" alt="Main area">
                 </div>
@@ -551,10 +593,7 @@
                     <img src="images/jpg/dumbbell+rack.jpeg" alt="Dumbbell rack">
                 </div>
             </div>
-            <div class="space-header">
-                <h2>The<br>Space.</h2>
-                <p>SOLIS is not a commercial gym - and it was never meant to be. Housed in a warehouse in the heart of Subiaco, the studio has been purposefully designed from the ground up to feel unlike anything else in Perth. Hand-picked high-end equipment chosen for quality over quantity, plants throughout, and a calm industrial aesthetic that is as intentional as the work that happens inside it.</p>
-            </div>
+            
         </div>
     </section>
 
