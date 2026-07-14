@@ -11,6 +11,11 @@
     <style>
         /* ── ABOUT PAGE SPECIFIC ── */
         /* Hero */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+        
         .about-hero {
             position: relative;
             min-height: 70vh; /* Adjust this value to make the banner taller or shorter */
@@ -99,7 +104,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 8rem;
             align-items: center;
-            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -113,51 +117,10 @@
             margin-bottom: 1.5rem;
         }
 
-        .philosophy-quote {
-            font-family: var(--font-serif);
-            font-size: clamp(1.8rem, 3vw, 2.6rem);
-            line-height: 1.25;
-            letter-spacing: -0.02em;
-            color: var(--text-dark);
-            margin-bottom: 2.5rem;
-        }
-
-        .philosophy-quote em {
-            font-style: italic;
-            color: var(--primary-green);
-        }
-
         .philosophy-body {
             font-size: 1rem;
             color: var(--text-light);
             line-height: 1.8;
-            max-width: 480px;
-        }
-
-        .philosophy-image-stack {
-            position: relative;
-            height: 560px;
-        }
-
-        .philosophy-img-main {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 75%;
-            height: 85%;
-            object-fit: cover;
-            border-radius: 20px;
-        }
-
-        .philosophy-img-accent {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 55%;
-            height: 55%;
-            object-fit: cover;
-            border-radius: 20px;
-            border: 6px solid var(--bg-cream);
         }
 
         /* Values strip */
@@ -283,9 +246,16 @@
         }
 
         /* Meet Dom section */
-        .about-meet {
-            padding: 8rem 5%;
+        .about-meet-wrapper {
             background-color: var(--bg-cream);
+            padding: 8rem 5%;
+        }
+
+        .meet-inner {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 6rem;
+            align-items: start;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -500,6 +470,7 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
+            .meet-image-badge { right: 1rem; } 
             .about-hero { grid-template-columns: 1fr; min-height: auto; }
             .about-hero-left { padding: 5rem 5% 4rem 5%; min-height: 70vh; }
             .about-hero-right { height: 50vh; }
@@ -526,6 +497,11 @@
             .about-meet { padding: 4rem 5%; }
             .about-space { padding: 4rem 5%; }
             .space-mosaic { grid-template-columns: 1fr; grid-template-rows: repeat(5, 220px); }
+            .about-meet-wrapper { padding: 4rem 8%; }
+            .meet-image-badge { 
+                right: 1rem; 
+                bottom: -1rem;
+            }
         }
     </style>
 </head>
@@ -604,10 +580,6 @@
                 <span class="philosophy-label">Our Philosophy</span>
                 <p class="philosophy-body">We've built an environment where pain and mental health are addressed together, free from the clinical language, fear and limitation that conventional healthcare too often creates. Remedial massage and structured training work together here to remove the physical and mental barriers that keep people stuck - replacing confusion and apprehension with structure, strength and clarity. We don't focus on what's wrong or what you can't do. We find what you can recover from, build a baseline, and grow from there - in a calm, intentional environment where you feel empowered, supported and genuinely taken care of.</p>
             </div>
-            <div class="philosophy-image-stack">
-                <img class="philosophy-img-main" src="images/jpg/door.jpeg" alt="Treatment room at Solis">
-                <img class="philosophy-img-accent" src="images/jpg/preacher.jpg" alt="Solis gym space">
-            </div>
         </div>
     </section>
 
@@ -657,11 +629,9 @@
     </section>
 
     <!-- Meet Dom -->
-    <section style="background-color: var(--bg-cream); padding: 8rem 5%;">
-        <div class="about-meet" style="padding: 0; max-width: 1400px; margin: 0 auto;">
-            <div class="meet-inner">
-                <div class="meet-image-wrapper">
-                    <!-- Replace with actual portrait -->
+    <section class="about-meet-wrapper">
+        <div class="meet-inner">
+            <div class="meet-image-wrapper">
                     <img src="images/jpg/dom.jpg" alt="Dom, founder of Solis">
                     <div class="meet-image-badge">
                         <strong>Dom</strong>
