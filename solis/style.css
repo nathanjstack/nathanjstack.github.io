@@ -1,14 +1,9 @@
 /* --- TYPOGRAPHY --- */
+@import url('https://googleapis.com');
+
 @font-face {
     font-family: 'PPFragment'; 
     src: url('fonts/PPFragment-SansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'TeodorBold';
-    src: url('fonts/Teodor-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -21,7 +16,7 @@
     --text-dark: #0F1010;
     --text-light: #555555;
     --white: #ffffff;
-    --font-serif: 'TeodorBold', 'Playfair Display', serif;
+    --font-serif: 'Playfair Display', 'DM Serif Display',  serif;
     --font-sans: 'PPFragment', 'Helvetica Neue', sans-serif;
     --transition: all 0.3s ease;
 }
@@ -217,6 +212,7 @@ header {
     font-family: var(--font-serif);
     color: var(--accent-orange);
     font-size: 4rem;
+    font-weight: bold !important;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     letter-spacing: -0.03em;
