@@ -11,7 +11,7 @@ fetch('../data/top10_esi.json')
     data.results.forEach(planet => {
       const item = document.createElement('p');
       item.className = 'exoplanet-item';
-      item.textContent = `${planet.rank}. ${planet.pl_name} — ESI: ${planet.esi.toFixed(3)}`;
+      item.textContent = `${planet.rank}. ${planet.pl_name} | ESI: ${planet.esi.toFixed(3)}`;
       container.appendChild(item);
     });
   })
