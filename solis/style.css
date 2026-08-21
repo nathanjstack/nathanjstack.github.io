@@ -1,6 +1,4 @@
 /* --- TYPOGRAPHY --- */
-@import url('https://googleapis.com');
-
 @font-face {
     font-family: 'PPFragment'; 
     src: url('fonts/PPFragment-SansMedium.woff') format('woff');
