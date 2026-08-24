@@ -11,19 +11,29 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
+<header>
         <a href="index.html" class="logo">SOLIS</a>
-        <div class="nav-links">
+        
+        <nav class="nav-links">
             <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="about.html">About</a>
-        </div>
+            
+            <!-- Dropdown Container -->
+            <div class="dropdown">
+                <p>Services ▾<p>
+                <div class="dropdown-content">
+                    <a href="personal_training.html">Personal Training</a>
+                    <a href="remedial_massage.html">Remedial Massage</a>
+                    <a href="memberships.html">Memberships</a>
+                </div>
+            </div>
+        </nav>
+
         <button class="hamburger-btn" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
+        
         <div class="header-buttons">
             <a href="booking.html" class="btn btn-dark">Book Now</a>
             <a href="contact.html" class="btn btn-outline">Contact Us</a>
